@@ -1,4 +1,4 @@
-# Project: Build your portfolio project (Week 2): MVP Complete
+# Project: Build your portfolio project
 
 
 Car Rental Project
