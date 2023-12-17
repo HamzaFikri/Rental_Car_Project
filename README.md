@@ -39,6 +39,8 @@ Frontend Integration: Employ Bootstrap for creating a sleek and user-friendly in
 
 Testing & Deployment: Thoroughly test the application's functionalities and deploy it on a server for public access.
 
+![Screenshot 2023-12-17 143839](https://github.com/HamzaFikri/Rental_Car_Project/assets/103943413/fe171838-e939-4a63-9e2c-e11b3608aa42)
+
 Conclusion
 This project demonstrates the seamless integration of Django, Python, Bootstrap, and SQLite3 to create an efficient and user-friendly car rental service. By leveraging these technologies, we ensure a reliable and scalable solution for both customers and administrators, enhancing the overall car rental experience.
 
