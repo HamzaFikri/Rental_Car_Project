@@ -1,0 +1,62 @@
+{% extends 'app/inc/sidenavbar.html' %} 
+{% load static %}
+{% block content %}
+{% for item in book %}
+<!-- <div class="container text-center">
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <img src="{% static 'images/user.gif' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.user.username}}</h5>
+                    <p class="card-text">{{item.category.name}}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+        </div>
+    </div>
+</div> -->
+<!-- <form class="d-flex">
+    <div class="col">
+        <div class="mb-3">
+            <div class="row">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/user.gif' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.user.username}}</h5>
+                            <p class="card-text">{{item.category.name}}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </form> -->
+
+  <div class="card row" style="width: 18rem;">
+    <img src="{% static 'images/user.gif' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">User :{{item.user.username}}</li>
+      <li class="list-group-item">Customer Name :{{item.customer_name}}</li>
+      <li class="list-group-item">Category : {{item.category.name}}</li>
+      <li class="list-group-item">Car : {{item.car.name}}</li>
+      <li class="list-group-item">{{item.start_date}} To {{item.end_date}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link"></a>
+      <a href="#" class="card-link"></a>
+    </div>
+  </div>
+<br>
+
+    
+
+  {% endfor %}
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  
+{% endblock %}

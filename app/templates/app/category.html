@@ -1,0 +1,47 @@
+{% extends 'app/layout/main.html' %}
+
+{% block content %}
+<style>
+    a{
+        text-decoration: none;
+    }
+</style>
+<div class="text-bg-dark p-3">
+    <div class="container">
+        <a class="text-white" href="{% url 'home' %}">Home</a>
+        <a class="text-white" href="{% url 'category' %}">/ Category</a>
+    </div>
+    
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Category Page</h1>
+            <hr>
+            <div class="row">
+                {% for item in category %}
+                    <div class="col-md-3">
+                        <div class="card">
+                            <a href="{% url 'categoryview' item.id %}">
+                                <div class="card-body">
+                                    <div class="category-image">
+                                        <img src="{{ item.image.url }}" alt="Category image" class="w-100">
+                                    </div>
+                                    <h4 class="text-center">{{ item.name }}</h4> 
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+       
+{% endblock content %}

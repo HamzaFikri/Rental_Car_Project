@@ -1,0 +1,29 @@
+{% extends 'app/inc/sidenavbar.html' %}
+{% block content %}
+
+<div class="container"> 
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="fw-bold">Add Car</h2>
+                        </div>
+                        <div class="card-body">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{form.as_p}}
+                                <input type="submit" class="btn btn-success" value="Add">
+                                <button class="btn btn-danger"><a href="{% url 'dashboard' %}">Exit</a></button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

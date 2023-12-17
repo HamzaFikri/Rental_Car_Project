@@ -1,0 +1,58 @@
+{% extends 'app/layout/main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="">
+                <div class="card mt-3 shadow">
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="text-center">
+                                <h4>Sign Up</h4>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <label for="">Username :</label>
+                                {{ form.username }}
+                                {% if form.errors.username %}
+                                    <label class="text-danger">{{ form.errors.username }}</label>
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Email :</label>
+                                {{form.email}}
+                                {% if form.errors.email %}
+                                    <label class="text-danger">{{ form.errors.email }}</label>
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Password :</label>
+                                {{form.password1}}
+                                {% if form.errors.password1 %}
+                                    <label class="text-danger">{{ form.errors.password1 }}</label>
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Confirm Password :</label>
+                                {{form.password2}}
+                                {% if form.errors.password2 %}
+                                    <label class="text-danger">{{ form.errors.password2 }}</label>
+                                {% endif %}
+                            </div>
+                            <button type="submit" class="btn float-end shadow btn-success px-4 ">Register<i class=""></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

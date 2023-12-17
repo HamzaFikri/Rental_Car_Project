@@ -1,0 +1,54 @@
+{% extends 'app/inc/sidenavbar.html' %} 
+{% block content %}
+
+<div class="container">
+  <!-- View User -->
+  <div class="col-md-10">
+    <div class="card">
+      <div class="card-header">
+        <h1 class="fw-bold text-center alert alert-info">View Users</h1>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Last Login</th>
+              <th>Email</th>
+              <th>Is Active</th>
+              <th>Date Joined</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for item in user %}
+            <tr>
+              <td>{{item.username}}</td>
+              <td>{{item.last_login}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.is_active}}</td>
+              <td>{{item.date_joined}}</td>
+              <td>
+                <a href="" class="btn btn-success">Edit</a>
+                <form
+                  action="{% url 'deleteuser' item.id %}"
+                  method="post"
+                  class="d-inline"
+                >
+                  {% csrf_token %}
+                  <!-- <a href="" class="btn btn-danger badge">Delete</a> -->
+                  <input class="btn btn-danger" type="submit" value="Delete" />
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <a href="{% url 'adduser'%}" class="btn btn-info ">Add</a>
+        <a href="{% url 'dashboard' %}" class="btn btn-outline-danger">Cancel</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

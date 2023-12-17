@@ -1,0 +1,126 @@
+{% extends 'app/layout/main.html' %}
+
+
+{% block content %}
+<style>
+
+    .py-5{
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Playfair Display', serif;
+    }
+    a{
+        text-decoration: none;
+    }
+    .car-viewtag{
+        background-color: red;
+        color: #fff;
+        font-size: 11px;
+        line-height: 1;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top: 22px;
+        margin-left: 17.5rem;
+        padding: 7px 10px;
+        font-weight: 600;
+        min-width: 45px;
+    }
+    
+</style>
+<div class="text-bg-dark p-3">
+    <div class="container">
+        <a class="text-white" href="{% url 'home' %}">Home</a>
+        <a class="text-white" href="{% url 'category' %}">/ Category</a>
+        <a class="text-white" href="{% url 'categoryview' car.category.id %}">/ {{ car.category.name }} </a>
+        <a class="text-white" href="{% url 'carview' car.category.id car.id %}">/ {{ car.name }}</a>
+
+    </div>
+    
+</div>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow car_data">
+                    <div class="card body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                {% if car.model %}
+                                <label class="car-viewtag">Model :{{ car.model }}</label>
+                                {% endif %}
+                                <img src="{{ car.car_image.url }}" class="w-100" alt="iamge">
+                            </div>
+                            <div class="col-md-8">
+                                <h2 class="mb-0">
+                                    {{ car.name }}
+                                    {% if car.available %}
+                                        <label style="font-size: 16px;" class="float-end badge bg-success trending_tag">Available</label>
+                                    {% else %}
+                                        <label style="font-size: 16px;" class="float-end badge bg-danger trending_tag">Not Available</label>
+                                    {% endif %}
+                                </h2>
+                                <hr>
+                                <label class="fw-bold">Price Per Day : $ {{ car.rental_price_per_day }}</label>
+                                <p class="mt-3">
+                                    {{ car.category.name }}
+                                </p>
+                                <hr>
+                                {% if car.available %}
+                                    <label class="badge bg-success">Number Of Cars Available: {{car.available}}</label>
+                                {% else %}
+                                    <label class="badge bg-danger">No Car is Available</label>
+                                {% endif %}
+                                <div class="row mt-2">
+                                    <div class="col-md-3">
+                                        
+                                        
+
+                                        <!-- <label for="day">Day</label>
+                                        <div class="input-group text-center mb-3" style="width: 130px;">
+                                            <button class="input-groupe-text decrement-btn">-</button>
+                                            <input type="text" name="day" class="form-control qty-input text-center"  value="1">
+                                            <button class="input-groupe-text increment-btn">+</button>
+                                        </div> -->
+                                    </div>
+                                    <div class="col-md-9">
+                                        <br/>
+                                        {% if car.available %}
+                                            <!-- <button type="button" class="btn btn-success me-3 float-start addToBook"><a href="{% url 'addtobook' %}">Book Now <i class="fa fa-shopping-cart"></i></a></button> -->
+                                            <form action="{% url 'addtobook' %}" method="post">
+                                                {% csrf_token %}
+                                                <input type="hidden" value="{{ car.id }}" name="car_id">
+                                                <input type="hidden" value="{{ request.user }}" name="customer_name">
+                                                <input type="hidden" value="{% now "Y-m-d" %}" name="start_date">
+                                                <!-- <input type="hidden" value="{% now "Y-m-d" %}" name="end_date"> -->
+                                                <input type="hidden" name="category" value="{{car.category.id}}">
+                                                <input class="btn btn-primary" type="submit" name="bookCar" value="Book Now">
+                                                <!-- <a href="{% url 'addtobook' %}" class="btn btn-primary">Book Now<i class="fa fa-shopping-cart"></i></a> -->
+                                            </form>
+                                            <!-- <a href="{% url 'home' %}" class="btn btn-outline-danger">Exit</a> -->
+                                        {% else %}
+                                            <!-- <button type="button" class="btn btn-primary me-3 float-start">Already take<i class="fa fa-heart"></i></button> -->
+                                            <a href="{% url 'home' %}" class="btn btn-outline-danger">Exit</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <hr>
+                            <h3 class="text-center">Description</h3>
+                            <p class="mt-3">
+                                {{ car.name }}
+                            </p>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1>{{ car.name }}</h1>
+                <hr>
+                <div class="row">
+       
+{% endblock content %}

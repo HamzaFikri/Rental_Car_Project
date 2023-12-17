@@ -1,0 +1,25 @@
+{% extends 'app/booking.html' %}
+
+
+{% block carsCheckBox %}
+
+<div class="row">
+{% for item in cars %}
+
+    <div class="category-image border border-secondary w-50">
+        <label>
+            <!-- <input type="radio" value="{{item.id}}" name="car"> -->
+            <img src="{{ item.car_image.url }}" alt="Car image" class="w-100">
+            <h4 class="text-center">{{ item.name }}</h4>
+            <p class="float-end">Model :{{ item.model }} </p>
+            <span class="float-start">Price Per Day :$ {{ item.rental_price_per_day | stringformat:'d' }} </span>
+        </label>
+    
+    </div>
+{% endfor %}
+</div>
+<br>
+      
+
+
+{% endblock carsCheckBox %}

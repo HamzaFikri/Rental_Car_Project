@@ -1,0 +1,59 @@
+{% extends 'app/inc/sidenavbar.html' %}
+{% block content %}
+
+<div class="col-md-10">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="fw-bold text-center alert alert-info">View Cars</h1>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Car Name</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Price Per Day</th>
+                        <th>Car Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for item in car %}
+                <tr>
+        
+                    <td>{{item.name}}</td>
+                    <td>{{item.model}}</td>
+                    <td>{{item.year}}</td>
+                    <td>{{item.rental_price_per_day}}</td>
+                    <td>
+                        <div class="car-image">
+                            <img src="{{ item.car_image.url }}" class="img-thumbnail" alt="Car image" style="height: 100px; width: 150px;">
+                        </div>
+                    </td>
+                    <td>
+                        <a href="" class="btn btn-success badge">Edit</a>
+                        <form
+                            action="{% url 'deletecar' item.id %}"
+                            method="post"
+                            class="d-inline">
+                            {% csrf_token %}
+                            <!-- <a href="" class="btn btn-danger badge">Delete</a> -->
+                            <input class="btn btn-danger" type="submit" value="Delete" />
+                        </form>
+                    </td>
+                    
+          
+                <!-- <a href="" class="btn btn-info" role="button">Edit</a> -->
+                </tr>
+                    {% endfor %}    
+                        </td>
+                </tbody>
+            </table>
+            <a href="{% url 'addcar' %}" class="btn btn-info">Add</a>
+        </div>
+    </div>
+</div>
+                
+{% endblock %}
