@@ -7,6 +7,9 @@ Introduction
 The project aims to develop a robust web application for a car rental service using Django, Python's powerful web framework. This solution utilizes Bootstrap for an elegant and responsive front-end design and SQLite3 as the database management system for efficient data handling.
 
 
+![Screenshot 2023-12-17 143955](https://github.com/HamzaFikri/Rental_Car_Project/assets/103943413/2842fbb8-4845-41f5-b98c-e24be195d724)
+
+
 Key Features
 User Authentication: Secure login and registration system for customers and administrators.
 
