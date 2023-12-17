@@ -19,6 +19,8 @@ Booking Functionality: Allow users to select and reserve cars for specified date
 
 Admin Dashboard: Accessible interface for administrators to manage cars, bookings, and user data.
 
+![Screenshot 2023-12-17 143822](https://github.com/HamzaFikri/Rental_Car_Project/assets/103943413/15679f77-32bf-47f5-a7d5-d9f6a7953cdd)
+
 Technologies Used
 Django: Utilized as the primary web framework for rapid development and structured implementation.
 
