@@ -1,13 +1,13 @@
 {
     "builds": [{
-        "src": "RENTAL_CAR_PROJECT/wsgi.py",
+        "src": "RentalCar/wsgi.py",
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.10.11" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "RENTAL_CAR_PROJECT/wsgi.py"
+            "dest": "RentalCar/wsgi.py"
         }
     ]
 }
