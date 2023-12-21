@@ -9,28 +9,9 @@ from django.db.models.expressions import RawSQL
 from django.db.models.query import QuerySet
 from datetime import datetime, timedelta
 
-
-# def addtobook(request):
-#     if request.method == 'POST':
-#         book = Booking.objects.all()
-#         form = BookingCarForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('category')
-#         else:
-#             print("-----------------"+form.errors)
-#     else:
-#         form = BookingCarForm()
-#     return render(request, 'app/booking.html', {'form': form}) 
-
 def addtobook(request):
     if request.method == "POST":
         form = BookingCarForm(request.POST, request.FILES)
-
-
-
-
-
         if request.POST.get('bookCar'):
             cars = Car.objects.filter(category_id =request.POST.get('category'))
             # end_date = datetime.strptime(request.POST.get('end_date'), '%Y-%m-%d')+ timedelta(days=1)
@@ -44,20 +25,6 @@ def addtobook(request):
             # post.update({"end_date":end_date})
             # print(post)
             return render(request, 'app/PrecarsCheckBox.html', {'form': form, 'cars': cars})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # ===========================================
         
@@ -105,23 +72,7 @@ def addtobook(request):
                         excludedCarIds.append(car.id)
                         break
             cars = Car.objects.filter(category_id =request.POST.get('category')).exclude(id__in = excludedCarIds)
-            # print("1=====================")
-            # print(allcars)
-            # print("2=====================")
-            # print(excludedCarIds)
-            # print("3=====================")
-            # print(cars)
-            
-
-
-
-
-
-
-
-
-
-
+           
             # for item in cars:
             # cars = Car.objects.filter(RawSQL("SELECT * FROM app_car WHERE category_id = %s and available >(SELECT COUNT(app_booking.id) FROM app_booking ,app_car WHERE app_car.id=app_booking.car_id and start_date = '%s' and end_date = '%s')",[request.POST.get('category'),request.POST.get('start_date'),request.POST.get('end_date')]))
             
