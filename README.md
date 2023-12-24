@@ -46,4 +46,4 @@ This project demonstrates the seamless integration of Django, Python, Bootstrap,
 
 
 
-
+![Screenshot 2023-12-24 161830](https://github.com/HamzaFikri/Rental_Car_Project/assets/103943413/bb43af7d-64d7-44fb-9e0d-0eebd90dddda)
