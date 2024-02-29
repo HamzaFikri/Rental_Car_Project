@@ -1,23 +1,66 @@
 # Project: Build your portfolio project
 
+# Rental Car Project
 
-Car Rental Project
-
-Introduction
+## Description
+    
 The project aims to develop a robust web application for a car rental service using Django, Python's powerful web framework. This solution utilizes Bootstrap for an elegant and responsive front-end design and SQLite3 as the database management system for efficient data handling.
 
+This project is a rental car management system built using Django, a high-level Python web framework. It facilitates the rental process by allowing users to browse available vehicles, make bookings, and manage bookings and vehicle inventory.
+
+## Features
+- **User Authentication**: Secure login and registration system for both customers and administrators.
+- **Vehicle Management**: Add, edit, and remove vehicles from the inventory.
+- **Booking Management**: Allow customers to book vehicles for specific dates and times.
+- **Transaction History**: Keep track of rental transactions for accounting purposes.
+- **Customer Management**: Maintain customer records and contact information.
+- **Admin Dashboard**: Provide administrators with a centralized dashboard to manage all aspects of the rental system.
+
+## Technologies Used
+- **Framework**: Django
+- **Database**: SQLite or PostgreSQL
+- **Authentication**: Django's built-in authentication system
+- **Frontend**: HTML, CSS, JavaScript (with Django templating)
+- **UI Framework**: Bootstrap
+
+## Installation
+1. Clone the repository:
+   ```
+   git clone https://github.com/HamzaFikri/Rental_Car_Project.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd rental-car-project
+   ```
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Apply database migrations:
+   ```
+   python manage.py migrate
+   ```
+5. Create a superuser (administrator account):
+   ```
+   python manage.py createsuperuser
+   ```
+6. Start the development server:
+   ```
+   python manage.py runserver
+   ```
+
+## Usage
+- Access the application through a web browser at `http://localhost:8000`.
+- Customers can sign up, log in, browse available vehicles, and make bookings.
+- Administrators can log in, manage vehicle inventory, view bookings, and access transaction history.
+
+## Contributors
+- [Your Name](https://github.com/HamzaFikri)
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ![Screenshot 2023-12-17 143955](https://github.com/HamzaFikri/Rental_Car_Project/assets/103943413/2842fbb8-4845-41f5-b98c-e24be195d724)
-
-
-Key Features
-User Authentication: Secure login and registration system for customers and administrators.
-
-Car Listings: Display available cars with detailed information (model, make, year, price, etc.).
-
-Booking Functionality: Allow users to select and reserve cars for specified dates.
-
-Admin Dashboard: Accessible interface for administrators to manage cars, bookings, and user data.
 
 ![Screenshot 2023-12-17 143822](https://github.com/HamzaFikri/Rental_Car_Project/assets/103943413/15679f77-32bf-47f5-a7d5-d9f6a7953cdd)
 
