@@ -18,7 +18,7 @@ This project is a rental car management system built using Django, a high-level 
 
 ## Technologies Used
 - **Framework**: Django
-- **Database**: SQLite or PostgreSQL
+- **Database**: SQLite 
 - **Authentication**: Django's built-in authentication system
 - **Frontend**: HTML, CSS, JavaScript (with Django templating)
 - **UI Framework**: Bootstrap
