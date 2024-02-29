@@ -55,7 +55,7 @@ This project is a rental car management system built using Django, a high-level 
 - Administrators can log in, manage vehicle inventory, view bookings, and access transaction history.
 
 ## Contributors
-- [Your Name](https://github.com/HamzaFikri)
+- [Mohammed Hamza Fikri](https://github.com/HamzaFikri)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
